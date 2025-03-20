@@ -20,3 +20,250 @@ li,
 figure {
   margin: 0;
 }
+
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+  --main-font: Raleway;
+  --accent-font: 'STIX Two Text';
+}
+
+.page {
+  background-color: var(--bg-color, yellow);
+  color: var(--text-color, black);
+  font-family: var(--main-font, serif);
+}
+
+.header {
+  padding-top: 10%;
+}
+
+.heading {
+  font-family: var(--accent-font, sans-serif);
+  line-height: 90%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content-section {
+  padding-left: 5vi;
+  padding-right: 5vi;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  padding-bottom: 40px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  border-top: solid 1px var(--text-color);
+  border-bottom: solid 1px var(--text-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 71px;
+}
+
+.header__theme-toggler {
+  display: flex;
+  list-style: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  gap: 20px;
+}
+
+.header__theme-button {
+  font-family: inherit;
+  color: currentColor;
+  background: none;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  position: relative;
+  text-decoration: none;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
+}
+
+.header__theme-button_is-active {
+  font-weight: bold;
+}
+
+.header__theme-button_is-active::after {
+  content: "";
+  position: absolute;
+  height: 0.3em;
+  background-color: var(--accent-color);
+  width: 76px;
+  right: 5px;
+  top: 14px;
+  z-index: -1;
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  content: "";
+  font-weight: bold;
+}
+
+.content__title {
+  font-size: 30px;
+  padding-top: 7%;
+  padding-bottom: 2.5%;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__paragraph:not(:last-of-type) {
+  padding-bottom: 1.5em;
+}
+
+.content__paragraph-link {
+  color: currentColor;
+}
+
+.content__blockquote {
+  width: 75%;
+  line-height: 200%;
+  font-style: italic;
+  padding-bottom: 1.5em;
+  margin: 0 auto;
+}
+
+.content__list {
+  list-style: none;
+  padding-left: 40px;
+}
+
+.content__list-item {
+  position: relative;
+}
+
+.content__list-item::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url('../images/marker-light.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -30px;
+}
+
+.theme_dark .content__list-item::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url('../images/marker-dark.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -30px;
+}
+
+.content__list-item:not(:last-of-type) {
+  padding-bottom: 10px;
+}
+
+.content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
+  background-color: var(--accent-color);
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-left: 1px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.theme_dark .content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
+  border: 1px solid var(--text-color);
+}
+
+.content__figure {
+  margin-top: 7%;
+  margin-bottom: 7%;
+  width: calc(100% + 2*5vi);
+  position: relative;
+  left: -5vi;
+}
+
+.content__picture {
+  width: 100%;
+}
+
+.content__picture-caption {
+  border-bottom: solid 1px var(--text-color);
+  text-align: center;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.content__card {
+  aspect-ratio: 4/3;
+  margin-top: 7%;
+  border: solid 1px currentColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content__card-title {
+  font-size: 60px;
+}
+
+.content__card-subtitle {
+  color: var(--text-color);
+}
+
+.colored-text::after {
+  content: "";
+  position: absolute;
+  height: 0.3em;
+  background-color: var(--accent-color);
+  width: 220px;
+  left: 49.25%;
+  top: 3200px;
+  z-index: -1;
+}
+
+button, a {
+  outline: none;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: solid 1px currentColor; 
+  outline-offset: 3px; 
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+.footer {
+  margin-top: 10%;
+  padding: 2.5%;
+  border-top: solid 1px var(--text-color);
+}
+
+.footer__copyright {
+  font-size: 18px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
+}
+
